@@ -19,6 +19,7 @@ jobs:
       - name: Pull Unity Docker image in background
         run: |
           docker pull unityci/editor:ubuntu-6000.3.10f1-android-3 &
+
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -38,22 +39,10 @@ jobs:
             Library-Temp-Linux-${{ runner.os }}-
             Library-Temp-Linux-
             Library-Temp-
-            
-      # Free Disk Space
-      - name: Free up Disk Space
-        run: |
-          sudo swapoff -a
-          sudo rm -f /swapfile
-          sudo rm -rf /var/lib/apt/lists/*
-          sudo rm -rf /tmp/*
-          sudo rm -rf /var/tmp/*
-          sudo apt clean
-          docker rmi $(docker image ls -aq)
-          df -h            
-          
+
       # Build
       - name: Build project
-        uses: game-ci/unity-builder@v4.8.1
+        uses: game-ci/unity-builder@main
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
@@ -61,6 +50,9 @@ jobs:
         with:
           targetPlatform: Android
           unityVersion: 6000.3.10f1
+          customImage: unityci/editor:ubuntu-6000.3.10f1-android-3
+          runAsHostUser: true
+          versioning: Semantic
 
       # Ensure Directory Exists
       - name: Ensure build directory exists
