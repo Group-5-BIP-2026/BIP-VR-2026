@@ -1,4 +1,4 @@
-name: Actions 😎
+name: Android Build
 
 on:
   push:
@@ -14,14 +14,14 @@ env:
 jobs:
   build:
     name: Build project ✨
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Pull Unity Docker image in background
         run: |
-          docker pull unityci/editor:ubuntu-6000.3.10f1-android-3.2.1 &
+          docker pull unityci/editor:ubuntu-6000.3.10f1-android-3 &
       # Checkout
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           lfs: true
 
@@ -30,7 +30,7 @@ jobs:
         run: mkdir -p Library
         
       # Cache
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: Library
           key: Library-Temp-Linux-${{ runner.os }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
@@ -53,21 +53,21 @@ jobs:
           
       # Build
       - name: Build project
-        uses: game-ci/unity-builder@v4
+        uses: game-ci/unity-builder@v4.8.1
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: android-3.2.1
+          targetPlatform: Android
           unityVersion: 6000.3.10f1
 
       # Ensure Directory Exists
       - name: Ensure build directory exists
-        run: mkdir -p build/android-3.2.1
+        run: mkdir -p build/Android
 
       # Output
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: Build
-          path: build/android-3.2.1
+          path: build/Android
