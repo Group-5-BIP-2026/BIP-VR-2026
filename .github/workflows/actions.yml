@@ -16,6 +16,7 @@ jobs:
     name: Build project ✨
     runs-on: ubuntu-24.04
     steps:
+      # Begin pulling Unity Docker image
       - name: Pull Unity Docker image in background
         run: |
           docker pull unityci/editor:ubuntu-6000.3.10f1-android-3 &
@@ -48,11 +49,11 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: Android
           unityVersion: 6000.3.10f1
+          targetPlatform: Android
           customImage: unityci/editor:ubuntu-6000.3.10f1-android-3
-          runAsHostUser: true
           versioning: Semantic
+          runAsHostUser: true
 
       # Ensure Directory Exists
       - name: Ensure build directory exists
