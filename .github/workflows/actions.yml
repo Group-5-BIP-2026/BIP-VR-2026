@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - Build
-  pull_request:
-    branches:
-      - Build
-
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
