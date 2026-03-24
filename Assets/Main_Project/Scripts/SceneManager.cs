@@ -1,3 +1,8 @@
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+#endif
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

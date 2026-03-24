@@ -505,6 +505,92 @@ Transform:
   - {fileID: 1511429138}
   m_Father: {fileID: 98445957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1455420645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455420648}
+  - component: {fileID: 1455420647}
+  - component: {fileID: 1455420646}
+  m_Layer: 0
+  m_Name: CPR_Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1455420646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455420645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e683fc2f9da2b4199f7065a298366f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CPRChestRhythm
+  leftHandCollider: {fileID: 0}
+  rightHandCollider: {fileID: 0}
+  requireBothHands: 1
+  targetBpm: 110
+  bpmTolerance: 12
+  minPressInterval: 0.2
+  requiredValidCompressions: 30
+  resetStreakOnInvalidCompression: 1
+  enableKeyboardTest: 1
+  testCompressionKey: 32
+  logDebugMessages: 0
+  onValidCompression:
+    m_PersistentCalls:
+      m_Calls: []
+  onInvalidCompression:
+    m_PersistentCalls:
+      m_Calls: []
+  onTargetReached:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1455420647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455420645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1455420648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455420645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.23858, y: 1.12368, z: -0.04531}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1511429137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,3 +1424,4 @@ SceneRoots:
   - {fileID: 1111792018}
   - {fileID: 1542354356}
   - {fileID: 1751920444}
+  - {fileID: 1455420648}

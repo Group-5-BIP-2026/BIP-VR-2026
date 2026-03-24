@@ -1,4 +1,8 @@
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+#endif
 
 [RequireComponent(typeof(Collider))]
 public class SectionCompleteTrigger : MonoBehaviour
