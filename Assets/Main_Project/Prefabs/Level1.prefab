@@ -210,9 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bf76f41dbcec3449daf6151620be74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SectionCompleteTrigger
-  owningSection: {fileID: 0}
-  playerTag: Player
-  triggerOnlyOnce: 1
+  owningSection: {fileID: 8671631292684929501}
+  playerTag: PlayerBody
+  triggerOnlyOnce: 0
 --- !u!1 &7412182056633122842
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  disableWallObjectAfterUnlock: 0
+  disableWallObjectAfterUnlock: 1
 --- !u!1 &7675583642312451120
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}

@@ -22,6 +22,8 @@ public class SectionCompleteTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"Collider ENTER: {other.name} | tag: {other.tag} | is trigger: {other.isTrigger}", this);
+
         if (triggerOnlyOnce && hasTriggered)
         {
             return;
