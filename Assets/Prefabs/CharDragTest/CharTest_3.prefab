@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 6073729800549261584}
   - component: {fileID: 6514612485853937080}
   - component: {fileID: 4153112256710139474}
+  - component: {fileID: 8424009942915321401}
   m_Layer: 0
   m_Name: Pelvis
   m_TagString: Untagged
@@ -462,6 +463,23 @@ MonoBehaviour:
   - {fileID: 2284572747380529969}
   - {fileID: 2284572747380529969}
   - {fileID: 4085615129576355515}
+--- !u!114 &8424009942915321401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284478532069454319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5032d5baa715d5a44a1c6df19d3837d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointable: {fileID: 6073729800549261584}
+  _radius: 0.01
+  _hoverColor: {r: 0, g: 0, b: 1, a: 1}
+  _selectColor: {r: 0, g: 1, b: 0, a: 1}
+  _drawAxes: 1
 --- !u!1 &380682061256515927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,8 +3063,6 @@ MonoBehaviour:
   _boundsCollider: {fileID: 57572859059833074}
   _colliders:
   - {fileID: 2284572747380529969}
-  - {fileID: 187867866401407961}
-  - {fileID: 281485817661107681}
   - {fileID: 6784439611975307203}
 --- !u!1 &4898404136693731924
 GameObject:
