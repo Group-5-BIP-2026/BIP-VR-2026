@@ -253,15 +253,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9.089796
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 9.88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 15.679913
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -295,6 +295,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1806680513116206669, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ddc7d820286b12418e0990cb6df8396, type: 2}
+    - target: {fileID: -1344930422171715072, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ec93dbdef7a45c240bc080a738393625, type: 2}
     - target: {fileID: 65702495048144492, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -303,6 +311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestStreetScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2946797854440858447, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b1a52f50d904ab4989947fd6885ff51, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: db6cb80bc7a721a408725cd09a414d48, type: 3}
