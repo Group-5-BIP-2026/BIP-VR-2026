@@ -8,6 +8,11 @@ using UnityEngine.InputSystem.Controls;
 [RequireComponent(typeof(Collider))]
 public class CPRChestRhythm : MonoBehaviour
 {
+    [Header("Success Flow")]
+    [SerializeField] private LevelSection owningSection;
+    [SerializeField] private bool completeSectionOnTargetReached = true;
+    [SerializeField] private bool spawnNextSectionOnTargetReached = true;
+
     [Header("Hand Colliders")]
     [SerializeField] private Collider leftHandCollider;
     [SerializeField] private Collider rightHandCollider;
@@ -40,6 +45,7 @@ public class CPRChestRhythm : MonoBehaviour
     private int validCompressionStreak;
     private int totalCompressions;
     private bool warnedUnsupportedInputSystemKey;
+    private bool targetReached;
 
     public int ValidCompressionStreak => validCompressionStreak;
     public int TotalCompressions => totalCompressions;
@@ -48,12 +54,24 @@ public class CPRChestRhythm : MonoBehaviour
     {
         Collider c = GetComponent<Collider>();
         c.isTrigger = true;
+
+        if (owningSection == null)
+        {
+            owningSection = GetComponentInParent<LevelSection>();
+        }
     }
 
     private void Update()
     {
-        if (enableKeyboardTest && IsKeyboardCompressionPressed())
+        bool pressed = enableKeyboardTest && IsKeyboardCompressionPressed();
+
+        if (pressed)
         {
+            if (logDebugMessages)
+            {
+                Debug.Log($"CPR INPUT: key pressed ({testCompressionKey}).", this);
+            }
+
             TryRegisterCompression(ignoreHandRequirement: true, source: "Keyboard");
         }
     }
@@ -171,21 +189,13 @@ public class CPRChestRhythm : MonoBehaviour
         totalCompressions++;
 
         bool isValid = true;
+        float measuredBpm = 0f;
         if (lastCompressionTime > 0f)
         {
-            float measuredBpm = 60f / elapsed;
+            measuredBpm = 60f / elapsed;
             float minBpm = targetBpm - bpmTolerance;
             float maxBpm = targetBpm + bpmTolerance;
             isValid = measuredBpm >= minBpm && measuredBpm <= maxBpm;
-
-            if (logDebugMessages)
-            {
-                Debug.Log($"CPR Compression ({source}): {measuredBpm:F1} BPM | target {targetBpm:F1} +/- {bpmTolerance:F1}", this);
-            }
-        }
-        else if (logDebugMessages)
-        {
-            Debug.Log($"CPR Compression ({source}): first compression registered.", this);
         }
 
         if (isValid)
@@ -195,14 +205,22 @@ public class CPRChestRhythm : MonoBehaviour
 
             if (validCompressionStreak >= requiredValidCompressions)
             {
-                onTargetReached?.Invoke();
+                HandleTargetReached();
             }
         }
         else
         {
             if (resetStreakOnInvalidCompression)
             {
+                int previousStreak = validCompressionStreak;
                 validCompressionStreak = 0;
+
+                if (logDebugMessages)
+                {
+                    Debug.Log(
+                        $"CPR RESET: not in rhythm. source={source}, bpm={measuredBpm:F1}, target={targetBpm:F1}+/-{bpmTolerance:F1}, streakBeforeReset={previousStreak}",
+                        this);
+                }
             }
 
             onInvalidCompression?.Invoke();
@@ -213,6 +231,34 @@ public class CPRChestRhythm : MonoBehaviour
         if (!ignoreHandRequirement)
         {
             handsReleasedSinceLastCompression = false;
+        }
+    }
+
+    private void HandleTargetReached()
+    {
+        if (targetReached)
+        {
+            return;
+        }
+
+        targetReached = true;
+
+        if (logDebugMessages)
+        {
+            Debug.Log(
+                $"CPR FINISHED: rescued=true, finished=true, total={totalCompressions}, streak={validCompressionStreak}/{requiredValidCompressions}, spawnNextSection={spawnNextSectionOnTargetReached}",
+                this);
+        }
+
+        onTargetReached?.Invoke();
+
+        if (completeSectionOnTargetReached && owningSection != null)
+        {
+            owningSection.CompleteSection(spawnNextSectionOnTargetReached);
+        }
+        else if (completeSectionOnTargetReached && owningSection == null)
+        {
+            Debug.LogWarning("CPRChestRhythm: completeSectionOnTargetReached is enabled but owningSection is not assigned.", this);
         }
     }
 
@@ -252,5 +298,6 @@ public class CPRChestRhythm : MonoBehaviour
         totalCompressions = 0;
         lastCompressionTime = -999f;
         handsReleasedSinceLastCompression = true;
+        targetReached = false;
     }
 }

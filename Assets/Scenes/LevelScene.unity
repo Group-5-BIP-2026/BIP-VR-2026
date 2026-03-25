@@ -1063,6 +1063,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e683fc2f9da2b4199f7065a298366f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CPRChestRhythm
+  owningSection: {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
+  completeSectionOnTargetReached: 1
+  spawnNextSectionOnTargetReached: 1
   leftHandCollider: {fileID: 0}
   rightHandCollider: {fileID: 0}
   requireBothHands: 1
@@ -1073,7 +1076,8 @@ MonoBehaviour:
   resetStreakOnInvalidCompression: 1
   enableKeyboardTest: 1
   testCompressionKey: 32
-  logDebugMessages: 0
+  logDebugMessages: 1
+  logDetailedState: 0
   onValidCompression:
     m_PersistentCalls:
       m_Calls: []

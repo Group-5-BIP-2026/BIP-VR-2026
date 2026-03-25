@@ -50,13 +50,22 @@ public class LevelSection : MonoBehaviour
 
     public void CompleteSection()
     {
+        CompleteSection(spawnNextSection: true);
+    }
+
+    public void CompleteSection(bool spawnNextSection)
+    {
         if (completed)
         {
             return;
         }
 
         completed = true;
-        owner?.HandleSectionCompleted(this);
+        if (spawnNextSection)
+        {
+            owner?.HandleSectionCompleted(this);
+        }
+
         StartUnlockGate();
     }
 
