@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 83ed612b33be5ab46bf766f666f900c4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 188378
+  packageName: MegaFiers - 2
+  packageVersion: 1.58
+  assetPath: Assets/Plugins/MegaFiers/Scripts/MegaFiers/Utils/MegaMeshCombiner.cs
+  uploadId: 733317
