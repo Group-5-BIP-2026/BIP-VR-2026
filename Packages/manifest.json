@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.cqf.urpvolumetricfog": "https://github.com/CristianQiu/Unity-URP-Volumetric-Light.git",
     "com.meta.xr.runtimeoptimizer": "0.2.2",
     "com.meta.xr.sdk.all": "85.0.0",
     "com.unity.ai.navigation": "2.0.11",
