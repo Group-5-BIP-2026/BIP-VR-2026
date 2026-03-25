@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.Controls;
 public class SectionCompleteTrigger : MonoBehaviour
 {
     [SerializeField] private LevelSection owningSection;
-    [SerializeField] private string playerTag = "Player";
+    [SerializeField] private string playerTag = "PlayerBody";
     [SerializeField] private bool triggerOnlyOnce = true;
 
     private bool hasTriggered;
@@ -51,12 +51,6 @@ public class SectionCompleteTrigger : MonoBehaviour
 
     private bool IsPlayer(Collider other)
     {
-        if (other.CompareTag(playerTag))
-        {
-            return true;
-        }
-
-        Transform root = other.transform.root;
-        return root != null && root.CompareTag(playerTag);
+        return other.CompareTag(playerTag);
     }
 }

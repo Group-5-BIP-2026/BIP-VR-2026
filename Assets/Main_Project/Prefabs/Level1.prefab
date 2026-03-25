@@ -246,7 +246,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.7997599, y: 0.39, z: -0.39302}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3.57, z: 3.46}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 391315179172154046}
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SectionCompleteTrigger
   owningSection: {fileID: 8671631292684929501}
   playerTag: PlayerBody
-  triggerOnlyOnce: 0
+  triggerOnlyOnce: 1
 --- !u!1 &5242077033750742238
 GameObject:
   m_ObjectHideFlags: 0
