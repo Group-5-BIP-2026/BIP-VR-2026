@@ -181,6 +181,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1769316424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &226329249 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 6057420185387477786, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+  m_PrefabInstance: {fileID: 1069415823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259108235
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 933788534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.84, z: 3.86}
+  m_LocalPosition: {x: 2, y: 0.518, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1157,15 +1162,15 @@ MonoBehaviour:
   owningSection: {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
   completeSectionOnTargetReached: 1
   spawnNextSectionOnTargetReached: 1
-  leftHandCollider: {fileID: 0}
-  rightHandCollider: {fileID: 0}
+  leftHandCollider: {fileID: 226329249}
+  rightHandCollider: {fileID: 1900400050}
   requireBothHands: 1
   targetBpm: 110
-  bpmTolerance: 12
+  bpmTolerance: 50
   minPressInterval: 0.2
-  requiredValidCompressions: 30
+  requiredValidCompressions: 5
   resetStreakOnInvalidCompression: 1
-  enableKeyboardTest: 1
+  enableKeyboardTest: 0
   testCompressionKey: 32
   logDebugMessages: 1
   onValidCompression:
@@ -1207,7 +1212,7 @@ Transform:
   m_GameObject: {fileID: 1455420645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.87953, y: 0, z: 15.02864}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1609,6 +1614,11 @@ Transform:
   - {fileID: 1612035087}
   m_Father: {fileID: 2138287213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1900400050 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 7892649251760697718, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+  m_PrefabInstance: {fileID: 1069415823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073651741
 GameObject:
   m_ObjectHideFlags: 0

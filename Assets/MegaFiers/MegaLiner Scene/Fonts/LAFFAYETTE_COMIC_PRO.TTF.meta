@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 2efe2e96446da7f4b99fc1e1dad4557c
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 12
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 
+  fontNames:
+  - 
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 188378
+  packageName: MegaFiers - 2
+  packageVersion: 1.58
+  assetPath: Assets/MegaFiers/MegaLiner Scene/Fonts/LAFFAYETTE_COMIC_PRO.TTF
+  uploadId: 733317
