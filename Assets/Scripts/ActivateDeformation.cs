@@ -5,6 +5,8 @@ public class ActivateDeformation : MonoBehaviour
 {
     public CPRChestRhythm rhythmScript;
     public Transform deformationTarget;
+    public Transform leftHandTransform;
+    public Transform rightHandTransform;
 
     public Collider leftHandCollider;
     public Collider rightHandCollider;
@@ -27,6 +29,7 @@ public class ActivateDeformation : MonoBehaviour
     void Start()
     {
         CacheHandCollidersFromRhythm();
+        CacheHandTransformsFromColliders();
     }
 
     void Update()
@@ -39,11 +42,17 @@ public class ActivateDeformation : MonoBehaviour
         if (!leftHandCollider || !rightHandCollider)
         {
             CacheHandCollidersFromRhythm();
+            CacheHandTransformsFromColliders();
         }
 
-        if (leftHandInside && rightHandInside && leftHandCollider && rightHandCollider)
+        if ((!leftHandTransform || !rightHandTransform) && (leftHandCollider || rightHandCollider))
         {
-            Vector3 midpoint = (leftHandCollider.bounds.center + rightHandCollider.bounds.center) * 0.5f;
+            CacheHandTransformsFromColliders();
+        }
+
+        if (leftHandInside && rightHandInside && leftHandTransform && rightHandTransform)
+        {
+            Vector3 midpoint = (leftHandTransform.position + rightHandTransform.position) * 0.5f;
 
             // Keep the deformation target within this trigger's collider shape.
             if (triggerCollider)
@@ -60,11 +69,11 @@ public class ActivateDeformation : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other == leftHandCollider)
+        if (IsFromSameHand(other, leftHandCollider))
         {
             leftHandInside = true;
         }
-        else if (other == rightHandCollider)
+        else if (IsFromSameHand(other, rightHandCollider))
         {
             rightHandInside = true;
         }
@@ -72,11 +81,11 @@ public class ActivateDeformation : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other == leftHandCollider)
+        if (IsFromSameHand(other, leftHandCollider))
         {
             leftHandInside = false;
         }
-        else if (other == rightHandCollider)
+        else if (IsFromSameHand(other, rightHandCollider))
         {
             rightHandInside = false;
         }
@@ -98,5 +107,36 @@ public class ActivateDeformation : MonoBehaviour
         {
             rightHandCollider = rhythmScript.rightHandCollider;
         }
+    }
+
+    void CacheHandTransformsFromColliders()
+    {
+        if (!leftHandTransform && leftHandCollider)
+        {
+            leftHandTransform = leftHandCollider.transform;
+        }
+
+        if (!rightHandTransform && rightHandCollider)
+        {
+            rightHandTransform = rightHandCollider.transform;
+        }
+    }
+
+    bool IsFromSameHand(Collider other, Collider handCollider)
+    {
+        if (!other || !handCollider)
+        {
+            return false;
+        }
+
+        Rigidbody otherBody = other.attachedRigidbody;
+        Rigidbody handBody = handCollider.attachedRigidbody;
+
+        if (otherBody && handBody)
+        {
+            return otherBody == handBody;
+        }
+
+        return other.transform.root == handCollider.transform.root;
     }
 }
