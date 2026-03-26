@@ -51,7 +51,7 @@ public class CPRChestRhythm : MonoBehaviour
     public int ValidCompressionStreak => validCompressionStreak;
     public int TotalCompressions => totalCompressions;
 
-    void Awake() {
+    void OnEnable() {
         leftHandCollider = GameObject.FindWithTag("LeftHand").GetComponent<Collider>();
         rightHandCollider =  GameObject.FindWithTag("RightHand").GetComponent<Collider>();
     }

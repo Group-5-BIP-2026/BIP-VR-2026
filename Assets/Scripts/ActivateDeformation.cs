@@ -12,7 +12,7 @@ public class ActivateDeformation : MonoBehaviour
     public Collider rightHandCollider;
 
     Collider triggerCollider;
-    Vector3 startPosition;
+    Vector3 startLocalPosition;
     bool leftHandInside;
     bool rightHandInside;
 
@@ -22,7 +22,7 @@ public class ActivateDeformation : MonoBehaviour
 
         if (deformationTarget)
         {
-            startPosition = deformationTarget.position;
+            startLocalPosition = deformationTarget.localPosition;
         }
     }
 
@@ -64,7 +64,7 @@ public class ActivateDeformation : MonoBehaviour
             return;
         }
 
-        deformationTarget.position = startPosition;
+        deformationTarget.localPosition = startLocalPosition;
     }
 
     void OnTriggerEnter(Collider other)
