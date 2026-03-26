@@ -836,6 +836,38 @@ PrefabInstance:
       propertyPath: owningSection
       value: 
       objectReference: {fileID: 8671631292684929501}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5895737511136117439}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206227065372592178, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+      propertyPath: onTargetReached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -844,5 +876,10 @@ PrefabInstance:
 --- !u!4 &1184627229608719660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7665831085121463807, guid: f13322765e4550345a386a3fde84f87f, type: 3}
+  m_PrefabInstance: {fileID: 8796133643687481555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5895737511136117439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3153640100251570796, guid: f13322765e4550345a386a3fde84f87f, type: 3}
   m_PrefabInstance: {fileID: 8796133643687481555}
   m_PrefabAsset: {fileID: 0}
