@@ -767,7 +767,7 @@ MonoBehaviour:
   sectionPrefabs:
   - {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
   - {fileID: 6669369254660967970, guid: 464817ec8dc5a764aaec0d53d724aa83, type: 3}
-  firstSectionPrefab: {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
+  firstSectionPrefab: {fileID: 6669369254660967970, guid: 464817ec8dc5a764aaec0d53d724aa83, type: 3}
   avoidImmediateRepeats: 1
   sectionsAheadAtStart: 1
   maxActiveSections: 4
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   requestBodyTrackingPermissionOnStartup: 0
   requestFaceTrackingPermissionOnStartup: 0
   requestEyeTrackingPermissionOnStartup: 0
-  requestScenePermissionOnStartup: 0
+  requestScenePermissionOnStartup: 1
   requestRecordAudioPermissionOnStartup: 0
   requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
