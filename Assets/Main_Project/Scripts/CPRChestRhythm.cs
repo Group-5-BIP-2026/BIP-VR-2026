@@ -14,8 +14,9 @@ public class CPRChestRhythm : MonoBehaviour
     [SerializeField] private bool spawnNextSectionOnTargetReached = true;
 
     [Header("Hand Colliders")]
-    [SerializeField] private Collider leftHandCollider;
-    [SerializeField] private Collider rightHandCollider;
+    [Header("Auto found by tag in Start()")]
+    public Collider leftHandCollider;
+    public Collider rightHandCollider;
     [SerializeField] private bool requireBothHands = true;
 
     [Header("Rhythm")]
@@ -49,6 +50,11 @@ public class CPRChestRhythm : MonoBehaviour
 
     public int ValidCompressionStreak => validCompressionStreak;
     public int TotalCompressions => totalCompressions;
+
+    void OnEnable() {
+        leftHandCollider = GameObject.FindWithTag("LeftHand").GetComponent<Collider>();
+        rightHandCollider =  GameObject.FindWithTag("RightHand").GetComponent<Collider>();
+    }
 
     private void Reset()
     {

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d3823126980dd98479f7761e6d47338a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -181,6 +181,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1769316424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &226329249 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 6057420185387477786, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+  m_PrefabInstance: {fileID: 1069415823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259108235
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &933788535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -579,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 933788534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.84, z: 3.86}
+  m_LocalPosition: {x: 2, y: 0.518, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -594,6 +599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1348995589}
     m_Modifications:
+    - target: {fileID: 49361947609402681, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_TagString
+      value: LeftHand
+      objectReference: {fileID: 0}
     - target: {fileID: 435407831072319256, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _leftEyeAnchor
       value: 
@@ -629,6 +638,10 @@ PrefabInstance:
     - target: {fileID: 3903482225804038118, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122846807058405205, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_TagString
+      value: RightHand
       objectReference: {fileID: 0}
     - target: {fileID: 4148778239110795873, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_Name
@@ -754,7 +767,7 @@ MonoBehaviour:
   sectionPrefabs:
   - {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
   - {fileID: 6669369254660967970, guid: 464817ec8dc5a764aaec0d53d724aa83, type: 3}
-  firstSectionPrefab: {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
+  firstSectionPrefab: {fileID: 6669369254660967970, guid: 464817ec8dc5a764aaec0d53d724aa83, type: 3}
   avoidImmediateRepeats: 1
   sectionsAheadAtStart: 1
   maxActiveSections: 4
@@ -768,13 +781,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111792016}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0.0000004768371, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1220669232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1070,7 @@ MonoBehaviour:
   requestBodyTrackingPermissionOnStartup: 0
   requestFaceTrackingPermissionOnStartup: 0
   requestEyeTrackingPermissionOnStartup: 0
-  requestScenePermissionOnStartup: 0
+  requestScenePermissionOnStartup: 1
   requestRecordAudioPermissionOnStartup: 0
   requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
@@ -1157,15 +1170,15 @@ MonoBehaviour:
   owningSection: {fileID: 8671631292684929501, guid: 07beab3a6ef61824cbf83569e94be64c, type: 3}
   completeSectionOnTargetReached: 1
   spawnNextSectionOnTargetReached: 1
-  leftHandCollider: {fileID: 0}
-  rightHandCollider: {fileID: 0}
+  leftHandCollider: {fileID: 226329249}
+  rightHandCollider: {fileID: 1900400050}
   requireBothHands: 1
   targetBpm: 110
-  bpmTolerance: 12
+  bpmTolerance: 50
   minPressInterval: 0.2
-  requiredValidCompressions: 30
+  requiredValidCompressions: 5
   resetStreakOnInvalidCompression: 1
-  enableKeyboardTest: 1
+  enableKeyboardTest: 0
   testCompressionKey: 32
   logDebugMessages: 1
   onValidCompression:
@@ -1207,7 +1220,7 @@ Transform:
   m_GameObject: {fileID: 1455420645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.87953, y: 0, z: 15.02864}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1609,6 +1622,11 @@ Transform:
   - {fileID: 1612035087}
   m_Father: {fileID: 2138287213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1900400050 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 7892649251760697718, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+  m_PrefabInstance: {fileID: 1069415823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073651741
 GameObject:
   m_ObjectHideFlags: 0
